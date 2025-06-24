@@ -1,0 +1,113 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variablen für Schriftarten & Größen */
+:root {
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-heading: 'Arial Black', Arial, sans-serif;
+
+  --font-size-base: 16px;
+  --font-size-h1: 2.5rem;
+  --font-size-p: 1rem;
+
+  --color-primary: #4a90e2;
+  --color-secondary: #f5f7fa;
+  --color-text: #333;
+  --color-bg: #fff;
+
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  --border-radius: 6px;
+  --transition-speed: 0.3s;
+}
+
+/* Body und Grundlayout */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Footer (leer aktuell) */
+header,
+footer {
+  padding: var(--spacing-medium);
+  background-color: var(--color-secondary);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Main Bereich */
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: var(--spacing-large) auto;
+  padding: 0 var(--spacing-medium);
+  text-align: center;
+}
+
+/* Überschrift */
+h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-medium);
+  color: var(--color-primary);
+}
+
+/* Paragraph */
+p {
+  font-size: var(--font-size-p);
+  margin-bottom: var(--spacing-large);
+  color: var(--color-text);
+}
+
+/* Bild */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: var(--spacing-large);
+  transition: transform var(--transition-speed);
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+/* Button */
+button#clickMe {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: var(--spacing-medium) var(--spacing-large);
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  box-shadow: 0 4px 6px rgba(74, 144, 226, 0.4);
+}
+
+button#clickMe:hover {
+  background-color: #357ABD;
+  transform: translateY(-2px);
+}
+
+button#clickMe:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
