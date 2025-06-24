@@ -1,28 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
 
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
     <header>
-
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">My Website</a>
+          <button
+            class="navbar-toggler custom-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
-    
-    <main>
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple HTML template.</p>
-        <img src="/images/sample.jpg" alt="Sample Image">
-        <button id="clickMe">Click Me!</button>
+
+    <main class="container my-5 text-center">
+      <h1>Welcome to My Website</h1>
+      <p>This is a simple HTML template.</p>
+      <section class="row align-items-center my-5 text-start">
+        <div
+          class="col-md-6 mb-4 mb-md-0 d-flex flex-column justify-content-center"
+        >
+          <h1>Willkommen!</h1>
+          <p>
+            Entdecke unsere Angebote und Services. Wir freuen uns auf deine
+            Kontaktaufnahme!
+          </p>
+          <div class="d-flex gap-3 mt-3">
+            <button class="btn btn-primary btn-lg">Mehr erfahren</button>
+            <button class="btn btn-primary btn-lg">Kontakt</button>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <img
+            src="/images/sample.jpg"
+            alt="Sample Image"
+            class="img-fluid rounded shadow w-100"
+          />
+        </div>
+      </section>
+
+      <!-- Neue Angebote Section -->
+      <section class="row align-items-center my-5 text-start">
+        <!-- Linke Box -->
+        <div
+          class="col-md-6 mb-4 mb-md-0 d-flex flex-column justify-content-center"
+        >
+          <h1>Unsere Angebote</h1>
+          <p>
+            Entdecke unsere besonderen Leistungen. Wähle eines der Angebote
+            rechts aus, um mehr zu erfahren!
+          </p>
+        </div>
+        <!-- Rechte Box mit zwei Elementen nebeneinander -->
+        <div class="col-md-6">
+          <div class="row ">
+            <!-- Erstes Element -->
+            <div
+              class="col-12 col-md-6 mb-4 mb-md-0 d-flex flex-column align-items-center offer-box"
+            >
+              <div class="offer-img-wrapper mb-3">
+                <img
+                  src="/images/sample.jpg"
+                  data-hover="/images/sample2.jpg"
+                  alt="Angebot 1"
+                  class="img-fluid rounded shadow offer-img"
+                  style="width: 100%; max-width: 200px"
+                />
+              </div>
+              <h3>Angebot 1</h3>
+              <p>
+                Kurze Beschreibung zu Angebot 1. Hier steht, was das Angebot
+                besonders macht.
+              </p>
+              <button class="btn btn-primary">Mehr erfahren</button>
+            </div>
+            <!-- Zweites Element -->
+            <div
+              class="col-12 col-md-6 mb-4 mb-md-0 d-flex flex-column align-items-center offer-box"
+            >
+              <div class="offer-img-wrapper mb-3">
+                <img
+                  src="/images/sample.jpg"
+                  data-hover="/images/sample2.jpg"
+                  alt="Angebot 2"
+                  class="img-fluid rounded shadow offer-img"
+                  style="width: 100%; max-width: 200px"
+                />
+              </div>
+              <h3>Angebot 2</h3>
+              <p>
+                Kurze Beschreibung zu Angebot 2. Hier steht, was das Angebot
+                besonders macht.
+              </p>
+              <button class="btn btn-primary">Mehr erfahren</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Neue Section: 50/50 Bild und Text -->
+      <section class="row align-items-center my-5 text-start">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img
+            src="/images/sample.jpg"
+            alt="Sample Image"
+            class="img-fluid rounded shadow w-100"
+          />
+        </div>
+        <div class="col-md-6">
+          <h1>Section Title</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
+            velit vel lacus dictum placerat.
+          </p>
+          <p>
+            Phasellus euismod, justo at facilisis cursus, urna erat dictum erat,
+            ac dictum enim urna eu erat.
+          </p>
+        </div>
+      </section>
+
+      <!-- Kontakt Section -->
+      <section
+        class="row align-items-center my-5 text-start"
+        id="contact-section"
+      >
+        <!-- Kontaktinfos -->
+        <div class="col-md-6 mb-4 mb-md-0 order-2 order-md-1">
+          <div id="contact-info" class="row g-3">
+            <div class="col-12">
+              <h1>Kontakt</h1>
+              <p class="mb-3">
+                Sie erreichen uns an mehreren Standorten – wählen Sie einen Pin
+                auf der Karte!
+              </p>
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <span class="me-3 fs-3 text-primary">
+                <i class="bi bi-geo-alt-fill"></i>
+              </span>
+              <div>
+                <div class="fw-bold" id="info-title">Hauptsitz</div>
+                <div id="info-details">Musterstraße 1, 12345 Musterstadt</div>
+              </div>
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <span class="me-3 fs-3 text-primary"
+                ><i class="bi bi-telephone-fill"></i
+              ></span>
+              <div>
+                <div class="fw-bold">Telefon</div>
+                <div>+49 123 456789</div>
+              </div>
+            </div>
+            <div class="col-12 d-flex align-items-center">
+              <span class="me-3 fs-3 text-primary"
+                ><i class="bi bi-envelope-fill"></i
+              ></span>
+              <div>
+                <div class="fw-bold">E-Mail</div>
+                <div>info@musterfirma.de</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Karte mit Pins -->
+        <div class="col-md-6 text-center order-1 order-md-2">
+          <div class="position-relative d-inline-block" style="max-width: 100%">
+            <img
+              src="/images/map.jpg"
+              alt="Karte"
+              class="img-fluid rounded shadow"
+              style="max-width: 100%; height: auto"
+            />
+            <!-- Pins (absolute Positionierung, Beispielwerte) -->
+            <span
+              class="map-pin pin-1"
+              data-title="Hauptsitz"
+              data-details="Musterstraße 1, 12345 Musterstadt"
+              style="position: absolute; top: 30%; left: 40%"
+            >
+              <i class="bi bi-geo-alt-fill"></i>
+            </span>
+            <span
+              class="map-pin pin-2"
+              data-title="Filiale Nord"
+              data-details="Nordstraße 10, 12345 Nordstadt"
+              style="position: absolute; top: 60%; left: 60%"
+            >
+              <i class="bi bi-geo-alt-fill"></i>
+            </span>
+            <span
+              class="map-pin pin-3"
+              data-title="Filiale Süd"
+              data-details="Südallee 99, 12345 Südstadt"
+              style="position: absolute; top: 50%; left: 20%"
+            >
+              <i class="bi bi-geo-alt-fill"></i>
+            </span>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-
+    <footer class="bg-light py-4 mt-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-3 mb-3">
+            <h5>Section 1</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Link 1</a></li>
+              <li><a href="#" class="text-decoration-none">Link 2</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <h5>Section 2</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Link 3</a></li>
+              <li><a href="#" class="text-decoration-none">Link 4</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <h5>Section 3</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Link 5</a></li>
+              <li><a href="#" class="text-decoration-none">Link 6</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-3">
+            <h5>Section 4</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Link 7</a></li>
+              <li><a href="#" class="text-decoration-none">Link 8</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/script.js"></script>
-</body>
+  </body>
 </html>

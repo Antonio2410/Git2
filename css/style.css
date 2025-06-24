@@ -16,7 +16,7 @@
   --font-size-h1: 2.5rem;
   --font-size-p: 1rem;
 
-  --color-primary: #4a90e2;
+  --color-primary: #27ae60; /* jetzt grün! */
   --color-secondary: #f5f7fa;
   --color-text: #333;
   --color-bg: #fff;
@@ -61,11 +61,8 @@ main {
 }
 
 /* Überschrift */
-h1 {
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-h1);
-  margin-bottom: var(--spacing-medium);
-  color: var(--color-primary);
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary) !important;
 }
 
 /* Paragraph */
@@ -85,9 +82,9 @@ img {
   transition: transform var(--transition-speed);
 }
 
-img:hover {
+/* img:hover {
   transform: scale(1.03);
-}
+} */
 
 /* Button */
 button#clickMe {
@@ -99,15 +96,196 @@ button#clickMe {
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: background-color var(--transition-speed), transform var(--transition-speed);
-  box-shadow: 0 4px 6px rgba(74, 144, 226, 0.4);
 }
 
 button#clickMe:hover {
-  background-color: #357ABD;
+  background-color: #219150; 
   transform: translateY(-2px);
 }
 
 button#clickMe:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+.custom-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  box-shadow: none;
+  z-index: 1051; /* Damit das Icon über dem Menü bleibt */
+}
+
+.custom-toggler .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #333;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  position: relative;
+}
+
+.custom-toggler.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.custom-toggler.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.custom-toggler.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Fokus-Stil entfernen */
+.custom-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Farbiger Balken unter Nav-Links bei Hover */
+.navbar-nav .nav-link,
+footer .list-unstyled a {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Direkt unter dem Text */
+  height: 3px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+
+footer .list-unstyled a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px; /* Wert nach Wunsch anpassen */
+  height: 3px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover::after,
+footer .list-unstyled a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Abstand zwischen den Footer-Links erhöhen */
+footer .list-unstyled li {
+  margin-bottom: 0.7rem; /* Wert nach Wunsch anpassen */
+}
+
+/* Karten-Pins */
+.map-pin {
+  width: 32px;
+  height: 32px;
+  background: url('/images/pin.svg') no-repeat center/contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 2;
+  display: inline-block;
+}
+.map-pin:hover,
+.map-pin.active {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 8px rgba(74,144,226,0.4));
+}
+
+.map-pin i {
+  font-size: 2.5rem;     
+  color: #27ae60;         
+  transition: transform 0.2s, color 0.2s;
+}
+
+.map-pin:hover i,
+.map-pin.active i {
+  transform: scale(1.2);
+  color: #219150;          
+}
+
+#contact-info .text-primary,
+#contact-info .bi {
+  color: #27ae60 !important; /* kräftiges Grün */
+}
+
+/* Links: keine blaue Farbe, keine Unterstreichung */
+a,
+.navbar-nav .nav-link,
+footer .list-unstyled a {
+  color: #222 !important;
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+
+a:hover,
+.navbar-nav .nav-link:hover,
+footer .list-unstyled a:hover {
+  color: #111 !important;
+  text-decoration: none !important;
+}
+
+/* Bootstrap .btn-primary auf grün anpassen */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #27ae60;           /* Hauptgrün */
+  --bs-btn-border-color: #27ae60;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #219150;     /* dunkleres Grün für Hover */
+  --bs-btn-hover-border-color: #219150;
+  --bs-btn-focus-shadow-rgb: 39, 174, 96;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #1a7a43;    /* noch dunkler für Active */
+  --bs-btn-active-border-color: #1a7a43;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #27ae60;
+  --bs-btn-disabled-border-color: #27ae60;
+}
+
+.offer-img-wrapper {
+  width: 200px;         /* gleiche Breite wie max-width im img */
+  height: 200px;        /* gewünschte Höhe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.offer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Bild wird passend zugeschnitten */
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.offer-img:hover {
+  filter: brightness(0.8);
+  /* Das Bild selbst wird per JS getauscht */
+}
+
+/* Angebots-Box Hover-Effekt */
+.offer-box {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+  border: 1px solid transparent;
+}
+
+.offer-box:hover {
+  transform: translateY(-6px) scale(1.03);
+  z-index: 2;
 }
