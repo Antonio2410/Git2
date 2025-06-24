@@ -275,17 +275,3 @@ footer .list-unstyled a:hover {
   filter: brightness(0.8);
   /* Das Bild selbst wird per JS getauscht */
 }
-
-/* Angebots-Box Hover-Effekt */
-.offer-box {
-  background: #fff;
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
-  border: 1px solid transparent;
-}
-
-.offer-box:hover {
-  transform: translateY(-6px) scale(1.03);
-  z-index: 2;
-}
